@@ -42,4 +42,4 @@ if image is not None:
     #st.success("Here you go!")
     st.balloons()
 else:
-    st.write("Upload an Image")
+    pass
