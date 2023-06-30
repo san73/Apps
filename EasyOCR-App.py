@@ -16,7 +16,7 @@ image = st.text_input('Enter the image url',placeholder='Type or Paste image url
 st.write('OR')
 
 #Upload image
-image = st.file_uploader(label = "Upload your image here",type=['png','jpg','jpeg'])
+image = st.file_uploader(type=['png','jpg','jpeg'])
 
 def load_model(): 
     reader = ocr.Reader(['en'])
