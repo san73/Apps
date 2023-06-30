@@ -5,9 +5,9 @@ import requests
 from io import BytesIO
 import numpy as np
 
-st.write('Easy OCR')
+st.title('Easy OCR')
 
-#image = st.text_input('Enter the image url')
+image = st.text_input('Enter the image url')
 #response = requests.get(image)
 
 # Read the image data into a PIL Image object
