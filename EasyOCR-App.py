@@ -37,7 +37,7 @@ if url_image is not None:
     
             for text in result:
                 result_text.append(text[1])
-    
+            st.write("Result:")
             st.write(result_text)
     except:
         pass
@@ -57,7 +57,7 @@ if upl_image is not None:
     
             for text in result:
                 result_text.append(text[1])
-    
+            st.write("Result:")
             st.write(result_text)
     except:
         pass
