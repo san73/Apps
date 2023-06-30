@@ -7,7 +7,7 @@ import numpy as np
 
 st.title('Easy OCR')
 
-image = st.text_input('Enter the image url')
+image = st.text_input('Enter the image url','Type or Paste image url here')
 #response = requests.get(image)
 
 # Read the image data into a PIL Image object
