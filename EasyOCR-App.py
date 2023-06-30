@@ -22,7 +22,7 @@ reader = load_model()
 
 if url_image is not None:
 
-    response = requests.get(image)
+    response = requests.get(url_image)
 
     # Read the image data into a PIL Image object
     input_image = Image.open(BytesIO(response.content))
