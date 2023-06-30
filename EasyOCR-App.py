@@ -39,8 +39,6 @@ if url_image is not None:
                 result_text.append(text[1])
     
             st.write(result_text)
-        #st.success("Here you go!")
-        st.balloons()
     except:
         pass
 else:
@@ -61,8 +59,6 @@ if upl_image is not None:
                 result_text.append(text[1])
     
             st.write(result_text)
-        #st.success("Here you go!")
-        st.balloons()
     except:
         pass
 else:
