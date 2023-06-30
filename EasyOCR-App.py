@@ -21,45 +21,49 @@ def load_model():
 reader = load_model()
 
 if url_image is not None:
-
-    response = requests.get(url_image)
-
-    # Read the image data into a PIL Image object
-    input_image = Image.open(BytesIO(response.content))
+    try:
+        response = requests.get(url_image)
     
-    st.image(input_image) #display image
-
-    with st.spinner("AI is at Work! "): 
-
-        result = reader.readtext(np.array(input_image))
-
-        result_text = [] #empty list for results
-
-        for text in result:
-            result_text.append(text[1])
-
-        st.write(result_text)
-    #st.success("Here you go!")
-    st.balloons()
+        # Read the image data into a PIL Image object
+        input_image = Image.open(BytesIO(response.content))
+        
+        st.image(input_image) #display image
+    
+        with st.spinner("AI is at Work! "): 
+    
+            result = reader.readtext(np.array(input_image))
+    
+            result_text = [] #empty list for results
+    
+            for text in result:
+                result_text.append(text[1])
+    
+            st.write(result_text)
+        #st.success("Here you go!")
+        st.balloons()
+    except:
+        pass
 else:
     pass
 
 if upl_image is not None:
-
-    input_image = Image.open(upl_image) #read image
-    st.image(input_image) #display image
-
-    with st.spinner("AI is at Work! "): 
-
-        result = reader.readtext(np.array(input_image))
-
-        result_text = [] #empty list for results
-
-        for text in result:
-            result_text.append(text[1])
-
-        st.write(result_text)
-    #st.success("Here you go!")
-    st.balloons()
+    try:
+        input_image = Image.open(upl_image) #read image
+        st.image(input_image) #display image
+    
+        with st.spinner("AI is at Work! "): 
+    
+            result = reader.readtext(np.array(input_image))
+    
+            result_text = [] #empty list for results
+    
+            for text in result:
+                result_text.append(text[1])
+    
+            st.write(result_text)
+        #st.success("Here you go!")
+        st.balloons()
+    except:
+        pass
 else:
     pass
