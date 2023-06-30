@@ -1,18 +1,11 @@
-import streamlit
+import streamlit as st
 import easyocr as ocr
 from PIL import Image
 import requests
 from io import BytesIO
 import numpy as np
 
-st.write('Easy OCR - Text from Images')
-
-#Upload image
-image = st.file_uploader(label = "Upload your image here",type=['png','jpg','jpeg'])
-
-# Send a GET request to retrieve the image
-
-st.write('OR')
+st.write('Easy OCR')
 
 #image = st.text_input('Enter the image url')
 #response = requests.get(image)
@@ -20,13 +13,16 @@ st.write('OR')
 # Read the image data into a PIL Image object
 #input_image = Image.open(BytesIO(response.content))
 
+st.write('OR')
+
+#Upload image
+image = st.file_uploader(label = "Upload your image here",type=['png','jpg','jpeg'])
 
 def load_model(): 
     reader = ocr.Reader(['en'])
     return reader 
 
 reader = load_model()
-
 
 if image is not None:
 
