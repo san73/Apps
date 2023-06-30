@@ -41,8 +41,10 @@ if url_image is not None:
             st.write(result_text)
     except:
         pass
-
-elif upl_image is not None:
+else:
+    pass
+    
+if upl_image is not None:
     try:
         input_image = Image.open(upl_image) #read image
         st.image(input_image) #display image
