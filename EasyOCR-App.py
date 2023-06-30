@@ -7,16 +7,12 @@ import numpy as np
 
 st.title('Easy OCR')
 
-image = st.text_input('Enter the image url',placeholder='Type or Paste image url here')
-#response = requests.get(image)
-
-# Read the image data into a PIL Image object
-#input_image = Image.open(BytesIO(response.content))
+url_image = st.text_input('Enter the image url',placeholder='Type or Paste image url here')
 
 st.write('OR')
 
 #Upload image
-image = st.file_uploader(label = '',type=['png','jpg','jpeg'])
+upl_image = st.file_uploader(label = '',type=['png','jpg','jpeg'])
 
 def load_model(): 
     reader = ocr.Reader(['en'])
@@ -24,9 +20,33 @@ def load_model():
 
 reader = load_model()
 
-if image is not None:
+if url_image is not None:
 
-    input_image = Image.open(image) #read image
+    response = requests.get(image)
+
+    # Read the image data into a PIL Image object
+    input_image = Image.open(BytesIO(response.content))
+    
+    st.image(input_image) #display image
+
+    with st.spinner("AI is at Work! "): 
+
+        result = reader.readtext(np.array(input_image))
+
+        result_text = [] #empty list for results
+
+        for text in result:
+            result_text.append(text[1])
+
+        st.write(result_text)
+    #st.success("Here you go!")
+    st.balloons()
+else:
+    pass
+
+if upl_image is not None:
+
+    input_image = Image.open(upl_image) #read image
     st.image(input_image) #display image
 
     with st.spinner("AI is at Work! "): 
