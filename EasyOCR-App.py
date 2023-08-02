@@ -4,8 +4,10 @@ from PIL import Image
 import requests
 from io import BytesIO
 import numpy as np
+from pytesseract import pytesseract
 
-st.title('Easy OCR')
+
+st.title('OCR')
 
 url_image = st.text_input('Enter the image url',placeholder='Type or Paste image url here')
 
@@ -35,8 +37,17 @@ if url_image is not None:
 
         for text in result:
             result_text.append(text[1])
-        st.write("Result:")
+        st.write("Easy OCR Result:")
         st.write(result_text)
+		
+		#Tesseract
+		
+		text = pytesseract.image_to_string(input_image)
+
+		# Displaying the extracted text
+		st.write("Tesseract OCR Result:")
+		st.write(text[:-1])
+
         
     except:
         pass
@@ -54,8 +65,16 @@ if upl_image is not None:
 
         for text in result:
             result_text.append(text[1])
-        st.write("Result:")
+        st.write("Easy OCR Result:")
         st.write(result_text)
+		
+		#Tesseract
+		
+		text = pytesseract.image_to_string(input_image)
+
+		# Displaying the extracted text
+		st.write("Tesseract OCR Result:")
+		st.write(text[:-1])
         
     except:
         pass
