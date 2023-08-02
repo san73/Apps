@@ -1,0 +1,21 @@
+# Use the official Python image as the base image
+FROM python:3.8
+
+# Install system-level dependencies (e.g., Tesseract OCR)
+RUN apt-get update && apt-get install -y libtesseract-dev
+
+# Set the working directory
+san73/apps
+
+# Copy the required files to the container
+COPY requirements.txt .
+COPY app.py .
+
+# Install Python dependencies
+RUN pip install -r requirements.txt
+
+# Expose the port your Streamlit app is running on
+EXPOSE 8501
+
+# Run your Streamlit app
+CMD ["streamlit", "run", "EasyOCR-App.py"]
