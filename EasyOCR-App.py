@@ -69,6 +69,7 @@ if upl_image is not None:
         st.write(result_text)
 
         #Tesseract
+        st.write("??:")
         text = pytesseract.image_to_string(input_image)
 
         # Displaying the extracted text
