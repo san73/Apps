@@ -4,5 +4,5 @@ openai
 bs4
 pytesseract
 tesseract-ocr
-libtesseract-dev
+libtesseract-dev==5.3.0-2
 
