@@ -2,3 +2,6 @@ openpyxl==3.0.9
 easyocr
 openai
 bs4
+pytesseract
+tesseract-ocr
+libtesseract-dev
