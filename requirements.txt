@@ -3,5 +3,4 @@ easyocr
 openai
 bs4
 pytesseract
-tesseract-ocr
 
