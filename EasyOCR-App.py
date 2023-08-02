@@ -41,7 +41,6 @@ if url_image is not None:
         st.write(result_text)
 		
 	#Tesseract
-	
 	text = pytesseract.image_to_string(input_image)
 
 	# Displaying the extracted text
@@ -69,7 +68,6 @@ if upl_image is not None:
         st.write(result_text)
 		
 	#Tesseract
-	
 	text = pytesseract.image_to_string(input_image)
 
 	# Displaying the extracted text
