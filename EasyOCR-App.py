@@ -39,13 +39,13 @@ if url_image is not None:
             result_text.append(text[1])
         st.write("Easy OCR Result:")
         st.write(result_text)
-		
-	#Tesseract
-	text = pytesseract.image_to_string(input_image)
 
-	# Displaying the extracted text
-	st.write("Tesseract OCR Result:")
-	st.write(text[:-1])
+        #Tesseract
+        text = pytesseract.image_to_string(input_image)
+
+        # Displaying the extracted text
+        st.write("Tesseract OCR Result:")
+        st.write(text[:-1])
 
         
     except:
@@ -66,13 +66,13 @@ if upl_image is not None:
             result_text.append(text[1])
         st.write("Easy OCR Result:")
         st.write(result_text)
-		
-	#Tesseract
-	text = pytesseract.image_to_string(input_image)
 
-	# Displaying the extracted text
-	st.write("Tesseract OCR Result:")
-	st.write(text[:-1])
+        #Tesseract
+        text = pytesseract.image_to_string(input_image)
+
+        # Displaying the extracted text
+        st.write("Tesseract OCR Result:")
+        st.write(text[:-1])
         
     except:
         pass
